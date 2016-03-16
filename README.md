@@ -3,7 +3,7 @@ RepeatPicker
 
 This is  a  RepeatPicker libray that based on [Google RFC2445](http://tools.ietf.org/html/rfc2445#section-4.3.10)
 
-![](https://github.com/nevermoresss/RecurrenceRule/blob/master/demo.gif)
+![](https://github.com/teambition/TbRepeatPicker/blob/master/demo.gif)
 
 
 #How?
