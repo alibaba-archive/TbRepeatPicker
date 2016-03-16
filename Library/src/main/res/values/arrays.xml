@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string-array name="recurrence">
+        <item>No repeat</item>
+        <item>Repeat everyday</item>
+        <item>Repeat every week</item>
+        <item>Repeat every 2 weeks</item>
+        <item>Repeat every month</item>
+    </string-array>
+
+    <string-array name="recurrence_freq">
+        <item>REPEAT DAILY</item>
+        <item>REPEAT WEEKLY</item>
+        <item>REPEAT MONTHLY</item>
+        <item>REPEAT YEARLY</item>
+    </string-array>
+</resources>

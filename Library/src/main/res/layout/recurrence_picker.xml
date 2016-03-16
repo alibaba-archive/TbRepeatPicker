@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F2F2F2"
+        android:minHeight="202dp"
+        android:minWidth="264dp"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/freqHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="12dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Spinner
+                    android:id="@+id/freqSpinner"
+                    style="@style/RecurrenceOptionCreatorFreqSpinnerStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:dropDownWidth="220dp"
+                    android:minWidth="220dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="#DDDDDD" />
+            </LinearLayout>
+
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/enableSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:checked="true"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/intervalGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/recurrence_every"
+                android:textColor="#383838"
+                android:textSize="16sp" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Spinner
+                    android:id="@+id/intevalSpinner"
+                    style="@style/RecurrenceIntervalSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:layout_width="48dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="bottom"
+                    android:background="#DDDDDD" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tvIntervalEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/recurrence_day"
+                android:textColor="#383838"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/optionsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
+
+
+            <com.teambition.recurrencerule.views.RecurrenceOptionsLayout
+                android:id="@+id/weekGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:visibility="gone" />
+
+
+            <com.teambition.recurrencerule.views.RecurrenceOptionsLayout
+                android:id="@+id/monthGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="16dp"
+                android:visibility="gone" />
+
+
+            <com.teambition.recurrencerule.views.RecurrenceOptionsLayout
+                android:id="@+id/yearGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tvRecurrenceTips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="264dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:textColor="#A2A2A2"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:id="@+id/buttonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/btnCancel"
+                style="@style/SButtonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/bt_cancel" />
+
+            <Button
+                android:id="@+id/btnOk"
+                style="@style/SButtonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/bt_ok" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

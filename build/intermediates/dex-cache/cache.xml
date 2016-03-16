@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/tangrongyi/Github/TbRepeatPicker/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.0/jars/libs/internal_impl-23.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6e239441500605809818997dd63b62a947195f8c">
+        <dex dex="/Users/tangrongyi/Github/TbRepeatPicker/app/build/intermediates/pre-dexed/debug/internal_impl-23.2.0_e0a380206287c411a571af8dbffc7f6f4bcc7deb.jar" />
+    </item>
+    <item
+        jar="/Users/tangrongyi/Github/TbRepeatPicker/app/build/intermediates/exploded-aar/com.android.support/design/23.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="1aa5b025efe97f5006f5be16d6ca67c6c3c0c0d8">
+        <dex dex="/Users/tangrongyi/Github/TbRepeatPicker/app/build/intermediates/pre-dexed/debug/com.android.support-design-23.2.0_d2fb824d49762a9f75ee14f87231eb744293152a.jar" />
+    </item>
+    <item
+        jar="/Users/tangrongyi/Github/TbRepeatPicker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6e3578f92f7462d1a935a1d36173e3bdd1234976">
+        <dex dex="/Users/tangrongyi/Github/TbRepeatPicker/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.2.0_d92d62a39f7b2f0d476bc064bec08e03a5f186c1.jar" />
+    </item>
+    <item
+        jar="/Users/tangrongyi/Github/TbRepeatPicker/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8c108c22c99e794eff255bb34d2a461200c4cbb0">
+        <dex dex="/Users/tangrongyi/Github/TbRepeatPicker/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-23.2.0_226067e65f8d01c358a43567ac9029e7cac19c36.jar" />
+    </item>
+    <item
+        jar="/Users/tangrongyi/Github/TbRepeatPicker/app/build/intermediates/exploded-aar/TbRepeatPicker/Library/unspecified/jars/libs/rrule.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e4c7f9fbec756815fe0cf3cee1c4d446b90345b3">
+        <dex dex="/Users/tangrongyi/Github/TbRepeatPicker/app/build/intermediates/pre-dexed/debug/rrule_2acedbba399a66687eaf1b2374d9c613b73fa7e9.jar" />
+    </item>
+    <item
+        jar="/Users/tangrongyi/Github/TbRepeatPicker/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e5f32fa48a3eb2de0c987025c11b6e3864b634d9">
+        <dex dex="/Users/tangrongyi/Github/TbRepeatPicker/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.2.0_5ff9bf86bde7d9054e6a298d549249cfa84824bb.jar" />
+    </item>
+    <item
+        jar="/Users/tangrongyi/Github/TbRepeatPicker/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="292a9fa091757208efa65e77eef63088247e51f3">
+        <dex dex="/Users/tangrongyi/Github/TbRepeatPicker/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.2.0_f4ebf3141e4c4ef3c3e89790f6d560d7aca5c229.jar" />
+    </item>
+    <item
+        jar="/Users/tangrongyi/Github/TbRepeatPicker/app/build/intermediates/exploded-aar/TbRepeatPicker/Library/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8a89d41438fdcab0c4a02e35f1c4a7e7b1749285">
+        <dex dex="/Users/tangrongyi/Github/TbRepeatPicker/app/build/intermediates/pre-dexed/debug/TbRepeatPicker-Library-unspecified_125c94597318c620e1c7aa2a424e583264c61fbd.jar" />
+    </item>
+    <item
+        jar="/Users/tangrongyi/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.0/support-annotations-23.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="c5bf571bb10462bd90e5419ade67793f71acbc87">
+        <dex dex="/Users/tangrongyi/Github/TbRepeatPicker/app/build/intermediates/pre-dexed/debug/support-annotations-23.2.0_d5b1234897801cd441a4dc5f4760cf1353d0ace2.jar" />
+    </item>
+    <item
+        jar="/Users/tangrongyi/Github/TbRepeatPicker/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d4c936aa8c7d2522c82e3f1829c791d9e367f009">
+        <dex dex="/Users/tangrongyi/Github/TbRepeatPicker/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.2.0_c4e001d0fbcbb3213d0b1eb1e2df3b0bcc7aa170.jar" />
+    </item>
+
+</items>

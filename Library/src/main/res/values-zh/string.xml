@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- custom recurrence rrule -->
+    <string name="recurrence_no_repeat">从不</string>
+    <string name="recurrence_every_day">每天</string>
+    <string name="recurrence_every_week">每周</string>
+    <string name="recurrence_every_2_week">每两周</string>
+    <string name="recurrence_every_month">每月</string>
+    <string name="recurrence_every_year">每年</string>
+    <string name="recurrence_every_weekday">工作日</string>
+    <string name="recurrence_custom">自定义&#8230;</string>
+
+    <string name="recurrence_every">每</string>
+    <string name="recurrence_day">天</string>
+    <string name="recurrence_week">周</string>
+    <string name="recurrence_month">月</string>
+    <string name="recurrence_year">年</string>
+
+
+    <string name="recurrence_interval_one_day_tip">事件将每天重复一次</string>
+    <string name="recurrence_interval_other_day_tip">事件将每%1$d天重复一次</string>
+    <!-- Event will occur every 2 weeks on Sunday, Monday and Wednesday_-->
+    <string name="recurrence_interval_one_week_tip">事件将每周于%1$s重复一次</string>
+    <string name="recurrence_interval_other_week_tip">事件将每%1$d周于%2$s重复一次</string>
+    <!-- Event will occur every 2 months on the 16th, 18th and 20th -->
+    <string name="recurrence_interval_one_month_tip">事件将每月于%1$s重复一次</string>
+    <string name="recurrence_interval_other_month_tip">时间将每%1$d月于%2$s重复一次</string>
+    <string name="recurrence_interval_one_year_tip">事件将每年于%1$s重复一次</string>
+    <string name="recurrence_interval_other_year_tip">事件将每%1$d年于%2$s重复一次</string>
+
+    <string name="recurrence_interval_and">和</string>
+
+
+    <string name="bt_cancel">取消</string>
+    <string name="bt_ok">确定</string>
+
+</resources>

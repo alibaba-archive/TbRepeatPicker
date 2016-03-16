@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/recurrenceOptionsMenu"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:orientation="vertical"
+        android:background="#ffffff">
+        <TextView
+            android:id="@+id/tvDoesNotRepeat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minWidth="264dp"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:text="@string/recurrence_no_repeat"
+            android:background="?android:attr/selectableItemBackground" />
+        <TextView
+            android:id="@+id/tvDaily"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:text="@string/recurrence_every_day"
+            android:background="?android:attr/selectableItemBackground" />
+        <TextView
+            android:id="@+id/tvWeekly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:text="@string/recurrence_every_week"
+            android:background="?android:attr/selectableItemBackground" />
+        <TextView
+            android:id="@+id/tvTwiceWeekly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:text="@string/recurrence_every_2_week"
+            android:background="?android:attr/selectableItemBackground" />
+        <TextView
+            android:id="@+id/tvMonthly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:text="@string/recurrence_every_month"
+            android:background="?android:attr/selectableItemBackground" />
+        <TextView
+            android:id="@+id/tvYearly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:text="@string/recurrence_every_year"
+            android:background="?android:attr/selectableItemBackground" />
+        <TextView
+            android:id="@+id/tvWeekday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:text="@string/recurrence_every_weekday"
+            android:background="?android:attr/selectableItemBackground" />
+        <TextView
+            android:id="@+id/tvCustom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:text="@string/recurrence_custom"
+            android:background="?android:attr/selectableItemBackground" />
+        <TextView
+            android:id="@+id/tvCustomTip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:maxWidth="264dp"
+            android:textSize="12sp"
+            android:textColor="#A2A2A2"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+</ScrollView>

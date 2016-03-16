@@ -1,0 +1,31 @@
+<resources>
+
+    <!-- custom recurrence rrule -->
+    <string name="recurrence_no_repeat">Never</string>
+    <string name="recurrence_every_day">Every Day</string>
+    <string name="recurrence_every_week">Every Week</string>
+    <string name="recurrence_every_2_week">Every 2 Weeks</string>
+    <string name="recurrence_every_month">Every Month</string>
+    <string name="recurrence_every_year">Every Year</string>
+    <string name="recurrence_every_weekday">Every Weekday</string>
+    <string name="recurrence_custom">Custom&#8230;</string>
+    <string name="recurrence_every">Every</string>
+    <string name="recurrence_day">Day</string>
+    <string name="recurrence_week">Week</string>
+    <string name="recurrence_month">Month</string>
+    <string name="recurrence_year">Year</string>
+    <string name="recurrence_interval_one_day_tip">Meeting will occur every day</string>
+    <string name="recurrence_interval_other_day_tip">Meeting will occur every %1$d days</string>
+    <!-- Event will occur every 2 weeks on Sunday, Monday and Wednesday_-->
+    <string name="recurrence_interval_one_week_tip">Meeting will occur every week on %1$s</string>
+    <string name="recurrence_interval_other_week_tip">Meeting will occur every %1$d weeks on %2$s.</string>
+    <!-- Event will occur every 2 months on the 16th, 18th and 20th -->
+    <string name="recurrence_interval_one_month_tip">Meeting will occur every month on %1$s</string>
+    <string name="recurrence_interval_other_month_tip">Meeting will occur every %1$d months on %2$s.</string>
+    <string name="recurrence_interval_one_year_tip">Meeting will occur every year in %1$s</string>
+    <string name="recurrence_interval_other_year_tip">Meeting will occur every %1$d years in %2$s.</string>
+    <string name="recurrence_interval_and">&#160;and&#160;</string>
+
+    <string name="bt_cancel">CANCEL</string>
+    <string name="bt_ok">OK</string>
+</resources>
