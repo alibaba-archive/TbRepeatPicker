@@ -24,6 +24,10 @@ recurrenceRuleHelper.startSetRecurrence();
 
 The Deafule Rule is **TbRule** , you can also use your own **Rule** by extends abstract class **Rule**;
 
+#Usage
+
+***compile 'com.tb.TBRecurrenceRule:RecurrenceRule:1.0.0'***
+
 
 
 
