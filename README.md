@@ -8,20 +8,21 @@ This is  a  RecurrenceRule libray that based on [Google RFC2445](http://tools.ie
 
 #How?
 ```java
-RecurrenceRuleHelper recurrenceRuleHelper = new RecurrenceRuleHelper(context,startDate,currentRules,
+RecurrenceRuleHelper recurrenceRuleHelper = new RecurrenceRuleHelper(context
                 new OnRecurrenceSetListener() { 
                     @Override
                     public void onRecurrenceSet(String recurrenceRule, String paresedStr) {
                     //do something
                     }
-                },yourRules);
-
-recurrenceRuleHelper.setRecurrence();
+                });
+recurrenceRuleHelper.setrRules(recurrenceRule);
+recurrenceRuleHelper.setStartDate(startDate);
+recurrenceRuleHelper.startSetRecurrence();
 ```
 
 
 
-The Deafule Rule is **TbRule** (Our Company is Teambition), you can also use your own **Rule** by extends abstract class **Rule**;
+The Deafule Rule is **TbRule** , you can also use your own **Rule** by extends abstract class **Rule**;
 
 
 
