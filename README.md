@@ -26,11 +26,23 @@ The Deafule Rule is **TbRule** , you can also use your own **Rule** by extends a
 
 #Dependency
 
-Add this to your module's build.gradle file:
+Step1.Add it in your root build.gradle at the end of repositories:
+
+```Gradle
+	allprojects {
+		repositories {
+			...
+			maven { url "https://jitpack.io" }
+		}
+	}
+```
+
+Step 2. Add the dependency
+
 ```Gradle
 dependencies {
 ...
-compile 'com.tb.TBRecurrenceRule:RecurrenceRule:1.0.0'
+compile 'com.github.teambition:TbRepeatPicker:1.0.2'
 }
 ```
 
