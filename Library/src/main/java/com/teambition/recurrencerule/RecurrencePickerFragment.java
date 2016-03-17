@@ -49,6 +49,7 @@ public class RecurrencePickerFragment extends DialogFragment implements OnRecurr
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        getDialog().getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         recurrencePickerView = (RecurrencePicker) inflater.inflate(R.layout.fragment_recurrence_picker, container);
         RecurrenceModel model = rRuleInstance.parseRRule(rrule);
         recurrencePickerView.initializeData(this, model, startDate, rRuleInstance);
