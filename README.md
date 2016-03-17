@@ -29,12 +29,11 @@ The Deafule Rule is **TbRule** , you can also use your own **Rule** by extends a
 Step1.Add it in your root build.gradle at the end of repositories:
 
 ```Gradle
-	allprojects {
-		repositories {
-			...
-			maven { url "https://jitpack.io" }
-		}
+allprojects {
+	repositories {
+	maven { url "https://jitpack.io" }
 	}
+}
 ```
 
 Step 2. Add the dependency
