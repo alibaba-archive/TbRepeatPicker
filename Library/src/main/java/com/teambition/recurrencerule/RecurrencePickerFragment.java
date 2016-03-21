@@ -19,9 +19,13 @@ public class RecurrencePickerFragment extends DialogFragment implements OnRecurr
 
     private RRule rRuleInstance;
 
-    public static RecurrencePickerFragment newInstance(Date startDate, String rrule, RRule rRuleInstance) {
+    private String[] rrule;
+    private Date startDate;
+
+    private OnRecurrenceSetListener callback;
+    public static RecurrencePickerFragment newInstance(Date startDate, String[] rrule, RRule rRuleInstance) {
         Bundle bundle = new Bundle();
-        bundle.putString("RecurrenceRule", rrule);
+        bundle.putStringArray("RecurrenceRule", rrule);
         bundle.putSerializable("StartDate", startDate);
         bundle.putSerializable("RRule", rRuleInstance);
 
@@ -30,17 +34,14 @@ public class RecurrencePickerFragment extends DialogFragment implements OnRecurr
         return instance;
     }
 
-    private String rrule;
-    private Date startDate;
 
-    private OnRecurrenceSetListener callback;
 
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            rrule = getArguments().getString("RecurrenceRule");
+            rrule = getArguments().getStringArray("RecurrenceRule");
             startDate = (Date) getArguments().getSerializable("StartDate");
             rRuleInstance = (RRule) getArguments().getSerializable("RRule");
         }
@@ -63,7 +64,7 @@ public class RecurrencePickerFragment extends DialogFragment implements OnRecurr
     }
 
     @Override
-    public void onRecurrenceSet(String recurrenceRule, String parsedStr) {
+    public void onRecurrenceSet(String[] recurrenceRule, String parsedStr) {
         dismiss();
         if (callback != null) {
             if (TextUtils.isEmpty(parsedStr)) {

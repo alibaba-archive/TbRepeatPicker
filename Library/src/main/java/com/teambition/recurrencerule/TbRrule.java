@@ -45,11 +45,10 @@ public class TbRrule extends RRule {
 
 
     @Override
-    public RecurrenceModel parseRRule(String rRules) {
-        if (TextUtils.isEmpty(rRules)) {
+    public RecurrenceModel parseRRule(String[] ruleArray) {
+        if (ruleArray == null || ruleArray.length == 0) {
             return null;
         }
-        String[] ruleArray = new String[]{rRules};
         String freq = "";
         Date dtStart = null;
         int interval = 1;
@@ -457,9 +456,6 @@ public class TbRrule extends RRule {
         String str = DateUtil.day2String(model.byDay[i]);
         s.append(str);
     }
-
-
-
 
 
     private String addDTSTART(String rrule, Date startDate) {

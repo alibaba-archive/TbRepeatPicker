@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -230,7 +231,12 @@ public class RecurrencePicker extends FrameLayout implements View.OnClickListene
         }
 
         if (mCallback != null) {
-            mCallback.onRecurrenceSet(generateRRule(mCurrentRecurrenceOption), "");
+            String[] ruleArray = null;
+            String ruleStr = generateRRule(mCurrentRecurrenceOption);
+            if (!TextUtils.isEmpty(ruleStr)) {
+                ruleArray = new String[]{ruleStr};
+            }
+            mCallback.onRecurrenceSet(ruleArray, "");
         }
 
     }
@@ -238,7 +244,11 @@ public class RecurrencePicker extends FrameLayout implements View.OnClickListene
     @Override
     public void onRecurrenceSet(String rrule) {
         if (mCallback != null) {
-            mCallback.onRecurrenceSet(rrule, "");
+            String[] ruleArray = null;
+            if (!TextUtils.isEmpty(rrule)) {
+                ruleArray = new String[]{rrule};
+            }
+            mCallback.onRecurrenceSet(ruleArray, "");
         }
     }
 

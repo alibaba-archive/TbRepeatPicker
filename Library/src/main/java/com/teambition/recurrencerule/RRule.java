@@ -8,7 +8,7 @@ import java.util.Date;
 public abstract class RRule implements Serializable {
 
 
-    abstract RecurrenceModel parseRRule(String rRules);
+    abstract RecurrenceModel parseRRule(String[] rRules);
 
     abstract String displayRRule(Context context, RecurrenceModel model);
 

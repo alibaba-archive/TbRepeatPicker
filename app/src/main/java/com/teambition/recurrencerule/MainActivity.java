@@ -25,9 +25,16 @@ public class MainActivity extends AppCompatActivity {
         recurrenceRuleHelper = new RecurrenceRuleHelper(MainActivity.this,
                 new OnRecurrenceSetListener() {
                     @Override
-                    public void onRecurrenceSet(String recurrenceRule, String paresedStr) {
+                    public void onRecurrenceSet(String[] recurrenceRule, String paresedStr) {
                         //do something
-                        textView.setText(paresedStr + ":" + recurrenceRule);
+                        String ruleString = null;
+
+                        if (recurrenceRule != null && recurrenceRule.length > 0) {
+                            for (int i = 0; i < recurrenceRule.length; i++) {
+                                ruleString += recurrenceRule[i];
+                            }
+                        }
+                        textView.setText(paresedStr + ":" + ruleString);
                         recurrenceRuleHelper.setrRules(recurrenceRule);
                     }
                 });

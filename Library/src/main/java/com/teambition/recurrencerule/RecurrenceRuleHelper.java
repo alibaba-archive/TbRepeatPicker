@@ -10,7 +10,7 @@ public class RecurrenceRuleHelper {
 
 
     private OnRecurrenceSetListener recurrenceCallback;
-    private String rRules;
+    private String[] rRules;
     private Date startDate = new Date();
     private RRule rRuleInstance;
     private Context context;
@@ -32,17 +32,13 @@ public class RecurrenceRuleHelper {
     }
 
 
-    public String getDisPlayInfo(String recurrencRules) {
+    public String getDisPlayInfo(String[] recurrencRules) {
 
         RecurrenceModel recurrenceModel = rRuleInstance.parseRRule(recurrencRules);
         String displayInfo = rRuleInstance.displayRRule(context, recurrenceModel);
         return displayInfo;
     }
 
-
-    public void setrRules(String rRules) {
-        this.rRules = rRules;
-    }
 
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
@@ -56,11 +52,15 @@ public class RecurrenceRuleHelper {
         return rRuleInstance;
     }
 
-    public String getrRules() {
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public String[] getrRules() {
         return rRules;
     }
 
-    public Date getStartDate() {
-        return startDate;
+    public void setrRules(String[] rRules) {
+        this.rRules = rRules;
     }
 }
