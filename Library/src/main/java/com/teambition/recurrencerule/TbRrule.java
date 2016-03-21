@@ -19,7 +19,7 @@ import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class TbRrule extends RRule {
+public class TbRrule implements RRule {
     private static final String RRULE = "RRULE:";
     private static final String FREQ = "FREQ=";
     private static final String INTERVAL = "INTERVAL=";
@@ -239,7 +239,7 @@ public class TbRrule extends RRule {
 
 
     @Override
-    String generateRRule(RecurrenceModel model, Date startDate) {
+    public String generateRRule(RecurrenceModel model, Date startDate) {
         StringBuilder s = new StringBuilder();
 
         s.append("FREQ=");

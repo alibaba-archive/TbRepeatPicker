@@ -12,7 +12,7 @@ public class RecurrenceRuleHelper {
     private OnRecurrenceSetListener recurrenceCallback;
     private String[] rRules;
     private Date startDate = new Date();
-    private RRule rRuleInstance;
+    private final RRule rRuleInstance;
     private Context context;
 
     public RecurrenceRuleHelper(Context context, OnRecurrenceSetListener recurrenceCallback) {
@@ -21,6 +21,11 @@ public class RecurrenceRuleHelper {
         this.rRuleInstance = new TbRrule();
     }
 
+    public RecurrenceRuleHelper(Context context, RRule rRule, OnRecurrenceSetListener recurrenceCallback) {
+        this.context = context;
+        this.recurrenceCallback = recurrenceCallback;
+        this.rRuleInstance = rRule;
+    }
 
     public void startSetRecurrence() {
         RecurrencePickerFragment recurrencePickerFragment = RecurrencePickerFragment.newInstance(startDate, rRules, rRuleInstance);
@@ -42,14 +47,6 @@ public class RecurrenceRuleHelper {
 
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
-    }
-
-    public void setrRuleInstance(RRule rRuleInstance) {
-        this.rRuleInstance = rRuleInstance;
-    }
-
-    public RRule getrRuleInstance() {
-        return rRuleInstance;
     }
 
     public Date getStartDate() {
