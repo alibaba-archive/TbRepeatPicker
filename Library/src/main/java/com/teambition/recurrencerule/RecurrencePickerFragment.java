@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.teambition.recurrence.R;
 
+import java.io.Serializable;
 import java.util.Date;
 
 public class RecurrencePickerFragment extends DialogFragment implements OnRecurrenceSetListener {
@@ -27,7 +28,7 @@ public class RecurrencePickerFragment extends DialogFragment implements OnRecurr
         Bundle bundle = new Bundle();
         bundle.putStringArray("RecurrenceRule", rrule);
         bundle.putSerializable("StartDate", startDate);
-        bundle.putSerializable("RRule", rRuleInstance);
+        bundle.putSerializable("RRule",  rRuleInstance);
 
         RecurrencePickerFragment instance = new RecurrencePickerFragment();
         instance.setArguments(bundle);
