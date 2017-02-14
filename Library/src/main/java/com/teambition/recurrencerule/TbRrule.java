@@ -3,19 +3,12 @@ package com.teambition.recurrencerule;
 import android.content.Context;
 import android.text.TextUtils;
 
-import com.rfc2445.antonchik.android.compat.javautil.DateIterator;
-import com.rfc2445.antonchik.android.compat.javautil.DateIteratorFactory;
 import com.teambition.recurrence.R;
 import com.teambition.recurrencerule.untils.DateUtil;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -321,117 +314,7 @@ public class TbRrule implements RRule {
     }
 
 
-    public static String[] addUntilForRecurrence(String[] rRules, Date eventStartTime) {
-        try {
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z'");
-            dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
 
-            ArrayList<String> recurrence = new ArrayList<>(Arrays.asList(rRules));
-            StringBuilder rRuleStrBuilder = new StringBuilder();
-
-            Date startTime = null;
-
-            for (int i = 0, len = recurrence.size(); i < len; i++) {
-                String str = recurrence.get(i);
-                if (str.startsWith("RRULE")) {
-                    Pattern startPattern = Pattern.compile("DTSTART=(\\w+)");
-                    Matcher matcher = startPattern.matcher(str);
-                    if (matcher.find()) {
-                        String startDateStr = matcher.group(1);
-                        startTime = dateFormat.parse(startDateStr);
-                    }
-                }
-                if (i == 0) {
-                    rRuleStrBuilder.append(str.replaceFirst(";DTSTART=(\\w+)", ""));
-                } else {
-                    rRuleStrBuilder.append("\n" + str.replaceFirst(";DTSTART=(\\w+)", ""));
-                }
-            }
-
-            if (startTime == null) {
-                return rRules;
-            }
-
-            Date previousDate = null;
-            DateIterator iterator = DateIteratorFactory.createDateIterator(rRuleStrBuilder.toString(), startTime, TimeZone.getTimeZone("UTC"), true);
-            while (iterator.hasNext()) {
-                Date date = iterator.next();
-                if (date.compareTo(eventStartTime) < 0) {
-                    previousDate = date;
-                } else {
-                    if (previousDate == null) {
-                        break;
-                    }
-                    String previousTimeStr = dateFormat.format(previousDate);
-                    for (int i = 0, len = recurrence.size(); i < len; i++) {
-                        String str = recurrence.get(i);
-                        if (str.startsWith("RRULE")) {
-                            if (!str.contains("UNTIL")) {
-                                str = str + ";UNTIL=" + previousTimeStr;
-                                recurrence.set(i, str);
-                            } else {
-                                Pattern pattern = Pattern.compile("UNTIL=(\\w+)");
-                                Matcher matcher = pattern.matcher(str);
-                                str = matcher.replaceFirst("UNTIL=" + previousTimeStr);
-                                recurrence.set(i, str);
-                            }
-                        }
-                    }
-                    break;
-                }
-
-            }
-            return recurrence.toArray(new String[recurrence.size()]);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return rRules;
-        }
-    }
-
-    public static String[] addExdateForRecurrence(String[] rRules, Date startTime) {
-        try {
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z'");
-            dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
-            String startStr = dateFormat.format(startTime);
-            ArrayList<String> recurrence = new ArrayList<>(Arrays.asList(rRules));
-            boolean hasExdate = false;
-            for (int i = 0, len = recurrence.size(); i < len; i++) {
-                String rRuleStr = recurrence.get(i);
-                if (rRuleStr.startsWith("EXDATE") && !rRuleStr.contains(startStr)) {
-                    rRuleStr += "," + startStr;
-                    recurrence.set(i, rRuleStr);
-                    hasExdate = true;
-                    break;
-                }
-            }
-            if (!hasExdate) {
-                String rRuleStr = String.format("EXDATE:%s", startStr);
-                recurrence.add(rRuleStr);
-            }
-            return recurrence.toArray(new String[recurrence.size()]);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return rRules;
-        }
-    }
-
-    public static Date getRecurrenceStartDate(String[] rRules) throws ParseException {
-        if (rRules == null || rRules.length == 0) {
-            return null;
-        }
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z'");
-        dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
-        String str = rRules[0];
-        if (str.startsWith("RRULE")) {
-            Pattern startPattern = Pattern.compile("DTSTART=(\\w+)");
-            Matcher matcher = startPattern.matcher(str);
-            if (matcher.find()) {
-                String startDateStr = matcher.group(1);
-                return dateFormat.parse(startDateStr);
-            }
-        }
-        return null;
-    }
 
 
     private void appendNumbers(StringBuilder s, String label,
