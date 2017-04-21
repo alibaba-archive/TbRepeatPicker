@@ -14,6 +14,5 @@
         <item>REPEAT DAILY</item>
         <item>REPEAT WEEKLY</item>
         <item>REPEAT MONTHLY</item>
-        <item>REPEAT YEARLY</item>
     </string-array>
 </resources>

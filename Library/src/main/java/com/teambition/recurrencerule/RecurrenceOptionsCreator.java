@@ -135,7 +135,7 @@ public class RecurrenceOptionsCreator extends FrameLayout implements AdapterView
         mIntervalSpinner = (Spinner) findViewById(R.id.intevalSpinner);
         mIntervalSpinner.setOnItemSelectedListener(this);
 
-        String[] intervalStrs = new String[999];
+        String[] intervalStrs = new String[7];
         for (int i = 0, length = intervalStrs.length; i < length; i++) {
             intervalStrs[i] = String.valueOf(i + 1);
         }
