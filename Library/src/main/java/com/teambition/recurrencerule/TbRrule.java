@@ -175,24 +175,11 @@ public class TbRrule implements RRule {
                 }
                 if (repeatDayCounts == 5) {
                     if (model.weeklyByDayOfWeek[1] && // Monday
-                            model.weeklyByDayOfWeek[2] && // Tuesday
-                            model.weeklyByDayOfWeek[3] && // Wednesday
-                            model.weeklyByDayOfWeek[4] && // Thursday
-                            model.weeklyByDayOfWeek[5]) { // Friday
+                        model.weeklyByDayOfWeek[2] && // Tuesday
+                        model.weeklyByDayOfWeek[3] && // Wednesday
+                        model.weeklyByDayOfWeek[4] && // Thursday
+                        model.weeklyByDayOfWeek[5]) { // Friday
                         displayInfo = everyWeekdayStr; // repeat every weekday.
-                    }
-                }
-            } else if (model.interval == 2) {
-                displayInfo = custom; //default.
-
-                int repeatDayCounts = 0;
-                for (boolean isRepeat : model.weeklyByDayOfWeek) {
-                    repeatDayCounts = repeatDayCounts + (isRepeat ? 1 : 0);
-                }
-                if (repeatDayCounts == 1) {
-                    int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
-                    if (model.weeklyByDayOfWeek[dayOfWeek - 1]) {
-                        displayInfo = everyTwiceWeekStr; //repeat every 2 week.
                     }
                 }
             } else {
@@ -312,9 +299,6 @@ public class TbRrule implements RRule {
 
         return rrule;
     }
-
-
-
 
 
     private void appendNumbers(StringBuilder s, String label,
