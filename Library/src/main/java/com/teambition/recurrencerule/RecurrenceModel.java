@@ -6,7 +6,7 @@ public class RecurrenceModel {
 
     public enum RecurrenceOption {
         DOES_NOT_REPEAT("DOES NOT REPEAT"),
-        DAILY("DAILY"), WEEKLY("WEEKLY"), TWICE_WEEKLY("TWICE_WEEKLY"),
+        DAILY("DAILY"), WEEKLY("WEEKLY"),
         MONTHLY("MONTHLY"), YEARLY("YEARLY"), WEEKDAY("WEEKDAY"), CUSTOM("CUSTOM"),;
 
         private final String optionName;

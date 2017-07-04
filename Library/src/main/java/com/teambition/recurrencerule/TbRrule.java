@@ -137,7 +137,6 @@ public class TbRrule implements RRule {
         final String noRepeatStr = context.getString(R.string.recurrence_no_repeat);
         final String everyDayStr = context.getString(R.string.recurrence_every_day);
         final String everyWeekStr = context.getString(R.string.recurrence_every_week);
-        final String everyTwiceWeekStr = context.getString(R.string.recurrence_every_2_week);
         final String everyMonthStr = context.getString(R.string.recurrence_every_month);
         final String everyYearStr = context.getString(R.string.recurrence_every_year);
         final String everyWeekdayStr = context.getString(R.string.recurrence_every_weekday);

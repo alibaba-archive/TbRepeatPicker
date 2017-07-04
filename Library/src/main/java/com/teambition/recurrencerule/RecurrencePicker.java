@@ -75,21 +75,19 @@ public class RecurrencePicker extends FrameLayout implements View.OnClickListene
         // Options/Views
         mRepeatOptionTextViews = new ArrayList<>();
         mRepeatOptionTextViews.add(
-                (TextView) findViewById(R.id.tvDoesNotRepeat));
+            (TextView) findViewById(R.id.tvDoesNotRepeat));
         mRepeatOptionTextViews.add(
-                (TextView) findViewById(R.id.tvDaily));
+            (TextView) findViewById(R.id.tvDaily));
         mRepeatOptionTextViews.add(
-                (TextView) findViewById(R.id.tvWeekly));
+            (TextView) findViewById(R.id.tvWeekly));
         mRepeatOptionTextViews.add(
-                (TextView) findViewById(R.id.tvTwiceWeekly));
+            (TextView) findViewById(R.id.tvMonthly));
         mRepeatOptionTextViews.add(
-                (TextView) findViewById(R.id.tvMonthly));
+            (TextView) findViewById(R.id.tvYearly));
         mRepeatOptionTextViews.add(
-                (TextView) findViewById(R.id.tvYearly));
+            (TextView) findViewById(R.id.tvWeekday));
         mRepeatOptionTextViews.add(
-                (TextView) findViewById(R.id.tvWeekday));
-        mRepeatOptionTextViews.add(
-                (TextView) findViewById(R.id.tvCustom));
+            (TextView) findViewById(R.id.tvCustom));
 
         tvCustomTip = (TextView) findViewById(R.id.tvCustomTip);
     }
@@ -110,7 +108,6 @@ public class RecurrencePicker extends FrameLayout implements View.OnClickListene
         final String noRepeatStr = getContext().getString(R.string.recurrence_no_repeat);
         final String everyDayStr = getContext().getString(R.string.recurrence_every_day);
         final String everyWeekStr = getContext().getString(R.string.recurrence_every_week);
-        final String everyTwiceWeekStr = getContext().getString(R.string.recurrence_every_2_week);
         final String everyMonthStr = getContext().getString(R.string.recurrence_every_month);
         final String everyYearStr = getContext().getString(R.string.recurrence_every_year);
         final String everyWeekdayStr = getContext().getString(R.string.recurrence_every_weekday);
@@ -122,8 +119,6 @@ public class RecurrencePicker extends FrameLayout implements View.OnClickListene
             mCurrentRecurrenceOption = RecurrenceModel.RecurrenceOption.DAILY;
         } else if (everyWeekStr.equals(displayInfo)) {
             mCurrentRecurrenceOption = RecurrenceModel.RecurrenceOption.WEEKLY;
-        } else if (everyTwiceWeekStr.equals(displayInfo)) {
-            mCurrentRecurrenceOption = RecurrenceModel.RecurrenceOption.TWICE_WEEKLY;
         } else if (everyMonthStr.equals(displayInfo)) {
             mCurrentRecurrenceOption = RecurrenceModel.RecurrenceOption.MONTHLY;
         } else if (everyYearStr.equals(displayInfo)) {
@@ -170,9 +165,6 @@ public class RecurrencePicker extends FrameLayout implements View.OnClickListene
             case WEEKLY:
                 viewIdToSelect = R.id.tvWeekly;
                 break;
-            case TWICE_WEEKLY:
-                viewIdToSelect = R.id.tvTwiceWeekly;
-                break;
             case MONTHLY:
                 viewIdToSelect = R.id.tvMonthly;
                 break;
@@ -214,8 +206,6 @@ public class RecurrencePicker extends FrameLayout implements View.OnClickListene
             mCurrentRecurrenceOption = RecurrenceModel.RecurrenceOption.DAILY;
         } else if (viewId == R.id.tvWeekly) {
             mCurrentRecurrenceOption = RecurrenceModel.RecurrenceOption.WEEKLY;
-        } else if (viewId == R.id.tvTwiceWeekly) {
-            mCurrentRecurrenceOption = RecurrenceModel.RecurrenceOption.TWICE_WEEKLY;
         } else if (viewId == R.id.tvMonthly) {
             mCurrentRecurrenceOption = RecurrenceModel.RecurrenceOption.MONTHLY;
         } else if (viewId == R.id.tvYearly) {
@@ -274,19 +264,6 @@ public class RecurrencePicker extends FrameLayout implements View.OnClickListene
             case WEEKLY: {
                 model.freq = RecurrenceModel.FREQ_WEEKLY;
                 model.interval = 1;
-                GregorianCalendar calendar = new GregorianCalendar();
-                calendar.setTime(startDate);
-                int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
-                model.byDay = new int[]{DateUtil.calendarDay2Day(dayOfWeek)};
-                model.byDayNum = new int[model.byDay.length];
-                model.byDayCount = model.byDay.length;
-
-                rrule = rRuleInstance.generateRRule(model, startDate);
-            }
-            break;
-            case TWICE_WEEKLY: {
-                model.freq = RecurrenceModel.FREQ_WEEKLY;
-                model.interval = 2;
                 GregorianCalendar calendar = new GregorianCalendar();
                 calendar.setTime(startDate);
                 int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);

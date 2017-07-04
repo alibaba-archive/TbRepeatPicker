@@ -7,85 +7,76 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
+        android:background="@drawable/bg_concer"
         android:orientation="vertical"
-        android:background="@drawable/bg_concer">
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp">
         <TextView
             android:id="@+id/tvDoesNotRepeat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
             android:minWidth="264dp"
             android:padding="16dp"
-            android:textSize="16sp"
             android:text="@string/recurrence_no_repeat"
-            android:background="?android:attr/selectableItemBackground" />
+            android:textSize="16sp"/>
         <TextView
             android:id="@+id/tvDaily"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
             android:padding="16dp"
-            android:textSize="16sp"
             android:text="@string/recurrence_every_day"
-            android:background="?android:attr/selectableItemBackground" />
+            android:textSize="16sp"/>
         <TextView
             android:id="@+id/tvWeekly"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
             android:padding="16dp"
-            android:textSize="16sp"
             android:text="@string/recurrence_every_week"
-            android:background="?android:attr/selectableItemBackground" />
-        <TextView
-            android:id="@+id/tvTwiceWeekly"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:textSize="16sp"
-            android:text="@string/recurrence_every_2_week"
-            android:background="?android:attr/selectableItemBackground" />
+            android:textSize="16sp"/>
         <TextView
             android:id="@+id/tvMonthly"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
             android:padding="16dp"
-            android:textSize="16sp"
             android:text="@string/recurrence_every_month"
-            android:background="?android:attr/selectableItemBackground" />
+            android:textSize="16sp"/>
         <TextView
             android:id="@+id/tvYearly"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
             android:padding="16dp"
-            android:textSize="16sp"
             android:text="@string/recurrence_every_year"
-            android:background="?android:attr/selectableItemBackground" />
+            android:textSize="16sp"/>
         <TextView
             android:id="@+id/tvWeekday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
             android:padding="16dp"
-            android:textSize="16sp"
             android:text="@string/recurrence_every_weekday"
-            android:background="?android:attr/selectableItemBackground" />
+            android:textSize="16sp"/>
         <TextView
             android:id="@+id/tvCustom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
             android:padding="16dp"
-            android:textSize="16sp"
             android:text="@string/recurrence_custom"
-            android:background="?android:attr/selectableItemBackground" />
+            android:textSize="16sp"/>
         <TextView
             android:id="@+id/tvCustomTip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxWidth="264dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:maxWidth="264dp"
-            android:textSize="12sp"
             android:textColor="#A2A2A2"
+            android:textSize="12sp"
             android:visibility="gone"/>
-
     </LinearLayout>
 </ScrollView>
