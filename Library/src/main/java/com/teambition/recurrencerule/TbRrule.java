@@ -159,20 +159,21 @@ public class TbRrule implements RRule {
             }
         } else if (model.freq == RecurrenceModel.FREQ_WEEKLY) {
             if (model.interval == 1) {
-
-                displayInfo = custom; //default.
+                displayInfo = custom; // default.
 
                 int repeatDayCounts = 0;
                 for (boolean isRepeat : model.weeklyByDayOfWeek) {
                     repeatDayCounts = repeatDayCounts + (isRepeat ? 1 : 0);
                 }
-                if (repeatDayCounts == 1) {
+
+                if (repeatDayCounts == 0) { // if no weekday specified, display 'everyWeek'
+                    displayInfo = everyWeekStr;
+                } else if (repeatDayCounts == 1) {
                     int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK); //from 1 ---> 7;
                     if (model.weeklyByDayOfWeek[dayOfWeek - 1]) {
-                        displayInfo = everyWeekStr; //repeat every week.
+                        displayInfo = everyWeekStr;
                     }
-                }
-                if (repeatDayCounts == 5) {
+                } else if (repeatDayCounts == 5) {
                     if (model.weeklyByDayOfWeek[1] && // Monday
                         model.weeklyByDayOfWeek[2] && // Tuesday
                         model.weeklyByDayOfWeek[3] && // Wednesday
@@ -185,13 +186,15 @@ public class TbRrule implements RRule {
                 displayInfo = custom;
             }
         } else if (model.freq == RecurrenceModel.FREQ_MONTHLY) {
-            displayInfo = custom; //default.
+            displayInfo = custom; // default.
             if (model.interval == 1) {
                 int repeatDayCounts = 0;
                 for (boolean isRepeat : model.monthlyByDayOfMonth) {
                     repeatDayCounts = repeatDayCounts + (isRepeat ? 1 : 0);
                 }
-                if (repeatDayCounts == 1) {
+                if (repeatDayCounts == 0) { // if no day of month specified, display 'everyMonth'
+                    displayInfo = everyMonthStr;
+                } else if (repeatDayCounts == 1) {
                     int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH); //from 1 ---> 31
                     if (model.monthlyByDayOfMonth[dayOfMonth - 1]) {
                         displayInfo = everyMonthStr; //repeat every month.
@@ -205,7 +208,9 @@ public class TbRrule implements RRule {
                 for (boolean isRepeat : model.yearlyByMonthOfYear) {
                     repeatMonthCounts = repeatMonthCounts + (isRepeat ? 1 : 0);
                 }
-                if (repeatMonthCounts == 1) {
+                if (repeatMonthCounts == 0) {  // if no month of year specified, display 'everyYear'
+                    displayInfo = everyYearStr;
+                } else if (repeatMonthCounts == 1) {
                     int monthOfYear = calendar.get(Calendar.MONTH);
                     if (model.yearlyByMonthOfYear[monthOfYear]) {
                         displayInfo = everyYearStr; //repeat every year.
