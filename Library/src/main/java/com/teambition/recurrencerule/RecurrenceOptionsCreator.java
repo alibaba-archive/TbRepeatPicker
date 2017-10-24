@@ -179,9 +179,11 @@ public class RecurrenceOptionsCreator extends FrameLayout implements AdapterView
         mMonthGroup.show(7, mModel, null, this);
         mYearGroup.show(4, mModel, generateMonthOfYearString(), this);
 
+        if (mModel.freq >= mFreqSpinner.getAdapter().getCount()) {
+            mModel.freq = RecurrenceModel.FREQ_WEEKLY;
+        }
         mFreqSpinner.setSelection(mModel.freq);
         mIntervalSpinner.setSelection(mModel.interval - 1);
-
 
         updateDialog();
     }
