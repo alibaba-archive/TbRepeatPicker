@@ -44,6 +44,11 @@ public class RecurrenceRuleHelper {
         return displayInfo;
     }
 
+    public String getDetailDisPlayInfo(String[] recurrencRules) {
+        RecurrenceModel recurrenceModel = rRuleInstance.parseRRule(recurrencRules);
+        String displayInfo = RecurrenceOptionsCreator.makeRecurrenceTip(context, recurrenceModel);
+        return displayInfo;
+    }
 
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
