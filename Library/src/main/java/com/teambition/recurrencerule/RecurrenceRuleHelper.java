@@ -44,7 +44,7 @@ public class RecurrenceRuleHelper {
         return displayInfo;
     }
 
-    public String getDetailDisPlayInfo(String[] recurrencRules) {
+    public String getDetailDisplayInfo(String[] recurrencRules) {
         RecurrenceModel recurrenceModel = rRuleInstance.parseRRule(recurrencRules);
         String displayInfo = RecurrenceOptionsCreator.makeRecurrenceTip(context, recurrenceModel);
         return displayInfo;
