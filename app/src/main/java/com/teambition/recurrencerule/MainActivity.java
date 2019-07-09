@@ -34,8 +34,7 @@ public class MainActivity extends AppCompatActivity {
                                 ruleString += recurrenceRule[i];
                             }
                         }
-                        textView.setText(paresedStr + ":" + ruleString + "\n" + recurrenceRuleHelper.getDetailDisPlayInfo(recurrenceRule));
-                        recurrenceRuleHelper.setrRules(recurrenceRule);
+                        textView.setText(paresedStr + ":" + ruleString + "\n");
                     }
                 });
 

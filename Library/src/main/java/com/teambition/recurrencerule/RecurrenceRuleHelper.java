@@ -50,6 +50,10 @@ public class RecurrenceRuleHelper {
         return displayInfo;
     }
 
+    public RecurrenceModel getRecurrenceModel(String[] recurrencRules) {
+        return rRuleInstance.parseRRule(recurrencRules);
+    }
+
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
