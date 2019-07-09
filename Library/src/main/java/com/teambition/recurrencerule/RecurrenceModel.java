@@ -107,10 +107,10 @@ public class RecurrenceModel {
         }
     }
 
-    public List<String> getByWeekDay(RecurrenceModel model) {
+    public List<String> getByWeekDay() {
         ArrayList<String> byWeekDay = new ArrayList<>();
-        for (int i = 0; i < model.weeklyByDayOfWeek.length; i++) {
-            if (model.weeklyByDayOfWeek[i]) {
+        for (int i = 0; i < weeklyByDayOfWeek.length; i++) {
+            if (weeklyByDayOfWeek[i]) {
                 if (i == 0) {
                     byWeekDay.add(SU);
                 } else if (i == 1) {
