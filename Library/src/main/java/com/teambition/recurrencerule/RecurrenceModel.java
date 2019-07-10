@@ -1,13 +1,25 @@
 package com.teambition.recurrencerule;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class RecurrenceModel {
+
+    public static final String SU = "SU";
+    public static final String MO = "MO";
+    public static final String TU = "TU";
+    public static final String WE = "WE";
+    public static final String TH = "TH";
+    public static final String FR = "FR";
+    public static final String SA = "SA";
+
 
     public enum RecurrenceOption {
         DOES_NOT_REPEAT("DOES NOT REPEAT"),
         DAILY("DAILY"), WEEKLY("WEEKLY"),
-        MONTHLY("MONTHLY"), YEARLY("YEARLY"), WEEKDAY("WEEKDAY"), CUSTOM("CUSTOM"),;
+        MONTHLY("MONTHLY"), YEARLY("YEARLY"), WEEKDAY("WEEKDAY"), CUSTOM("CUSTOM"),
+        ;
 
         private final String optionName;
 
@@ -73,6 +85,51 @@ public class RecurrenceModel {
     public int byMonthCount;
     public int[] bySetPos;
     public int bySetPosCount;
+
+
+    public void setWeeklyByDayOfWeek(String[] byDay) {
+        for (String day : byDay) {
+            if (SU.equalsIgnoreCase(day)) {
+                weeklyByDayOfWeek[0] = true;
+            } else if (MO.equalsIgnoreCase(day)) {
+                weeklyByDayOfWeek[1] = true;
+            } else if (TU.equalsIgnoreCase(day)) {
+                weeklyByDayOfWeek[2] = true;
+            } else if (WE.equalsIgnoreCase(day)) {
+                weeklyByDayOfWeek[3] = true;
+            } else if (TH.equalsIgnoreCase(day)) {
+                weeklyByDayOfWeek[4] = true;
+            } else if (FR.equalsIgnoreCase(day)) {
+                weeklyByDayOfWeek[5] = true;
+            } else if (SA.equalsIgnoreCase(day)) {
+                weeklyByDayOfWeek[6] = true;
+            }
+        }
+    }
+
+    public List<String> getByWeekDay() {
+        ArrayList<String> byWeekDay = new ArrayList<>();
+        for (int i = 0; i < weeklyByDayOfWeek.length; i++) {
+            if (weeklyByDayOfWeek[i]) {
+                if (i == 0) {
+                    byWeekDay.add(SU);
+                } else if (i == 1) {
+                    byWeekDay.add(MO);
+                } else if (i == 2) {
+                    byWeekDay.add(TU);
+                } else if (i == 3) {
+                    byWeekDay.add(WE);
+                } else if (i == 4) {
+                    byWeekDay.add(TH);
+                } else if (i == 5) {
+                    byWeekDay.add(FR);
+                } else if (i == 6) {
+                    byWeekDay.add(SA);
+                }
+            }
+        }
+        return byWeekDay;
+    }
 
 
 }

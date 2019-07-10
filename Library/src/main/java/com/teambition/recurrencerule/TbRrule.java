@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import com.teambition.recurrence.R;
 import com.teambition.recurrencerule.untils.DateUtil;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -20,19 +21,14 @@ public class TbRrule implements RRule {
     private static final String BYDAY = "BYDAY=";
     private static final String BYMONTHDAY = "BYMONTHDAY=";
     private static final String BYMONTH = "BYMONTH=";
+    private static final String BYHOUR = "BYHOUR=";
+    private static final String BYMINUTE = "BYMINUTE=";
 
     private static final String DAILY = "DAILY";
     private static final String WEEKLY = "WEEKLY";
     private static final String MONTHLY = "MONTHLY";
     private static final String YEARLY = "YEARLY";
 
-    private static final String SU = "SU";
-    private static final String MO = "MO";
-    private static final String TU = "TU";
-    private static final String WE = "WE";
-    private static final String TH = "TH";
-    private static final String FR = "FR";
-    private static final String SA = "SA";
 
     private static final String DATE_FORMAT_DTSTART = "yyyyMMdd'T'HHmmss'Z'";
 
@@ -48,6 +44,8 @@ public class TbRrule implements RRule {
         String[] byDay = null;
         String[] byMonthDay = null;
         String[] byMonth = null;
+        String[] byHour = null;
+        String[] byMinute = null;
 
         for (int i = 0; i < ruleArray.length; i++) {
             String rRuleStr = ruleArray[i];
@@ -70,6 +68,12 @@ public class TbRrule implements RRule {
                     } else if (rule.contains(BYMONTH)) {
                         String strBymonth = rule.replace(BYMONTH, "");
                         byMonth = strBymonth.split(",");
+                    } else if (rule.contains(BYHOUR)) {
+                        String strByHoure = rule.replace(BYHOUR, "");
+                        byHour = strByHoure.split(",");
+                    } else if (rule.contains(BYMINUTE)) {
+                        String strByMinute = rule.replace(BYMINUTE, "");
+                        byMinute = strByMinute.split(",");
                     }
                 }
                 break;
@@ -90,22 +94,38 @@ public class TbRrule implements RRule {
         model.start = dtStart;
 
         if (byDay != null && byDay.length > 0) {
-            for (String day : byDay) {
-                if (SU.equalsIgnoreCase(day)) {
-                    model.weeklyByDayOfWeek[0] = true;
-                } else if (MO.equalsIgnoreCase(day)) {
-                    model.weeklyByDayOfWeek[1] = true;
-                } else if (TU.equalsIgnoreCase(day)) {
-                    model.weeklyByDayOfWeek[2] = true;
-                } else if (WE.equalsIgnoreCase(day)) {
-                    model.weeklyByDayOfWeek[3] = true;
-                } else if (TH.equalsIgnoreCase(day)) {
-                    model.weeklyByDayOfWeek[4] = true;
-                } else if (FR.equalsIgnoreCase(day)) {
-                    model.weeklyByDayOfWeek[5] = true;
-                } else if (SA.equalsIgnoreCase(day)) {
-                    model.weeklyByDayOfWeek[6] = true;
+            model.setWeeklyByDayOfWeek(byDay);
+        }
+
+        if (byHour != null && byHour.length > 0) {
+            ArrayList<Integer> list = new ArrayList<>();
+            for (String aByHour : byHour) {
+                int hourOfDay = Integer.parseInt(aByHour);
+                if (hourOfDay < 0 || hourOfDay > 24) {
+                    continue;
                 }
+                list.add(hourOfDay);
+            }
+            model.byHourCount = list.size();
+            model.byHour = new int[model.byHourCount];
+            for (int i = 0; i < list.size(); i++) {
+                model.byHour[i] = list.get(i);
+            }
+        }
+
+        if (byMinute != null && byMinute.length > 0) {
+            ArrayList<Integer> list = new ArrayList<>();
+            for (String aByMinute : byMinute) {
+                int minute = Integer.parseInt(aByMinute);
+                if (minute < 0 || minute > 60) {
+                    continue;
+                }
+                list.add(minute);
+            }
+            model.byMinuteCount = list.size();
+            model.byMinute = new int[model.byMinuteCount];
+            for (int i = 0; i < list.size(); i++) {
+                model.byMinute[i] = list.get(i);
             }
         }
 
@@ -175,10 +195,10 @@ public class TbRrule implements RRule {
                     }
                 } else if (repeatDayCounts == 5) {
                     if (model.weeklyByDayOfWeek[1] && // Monday
-                        model.weeklyByDayOfWeek[2] && // Tuesday
-                        model.weeklyByDayOfWeek[3] && // Wednesday
-                        model.weeklyByDayOfWeek[4] && // Thursday
-                        model.weeklyByDayOfWeek[5]) { // Friday
+                            model.weeklyByDayOfWeek[2] && // Tuesday
+                            model.weeklyByDayOfWeek[3] && // Wednesday
+                            model.weeklyByDayOfWeek[4] && // Thursday
+                            model.weeklyByDayOfWeek[5]) { // Friday
                         displayInfo = everyWeekdayStr; // repeat every weekday.
                     }
                 }
